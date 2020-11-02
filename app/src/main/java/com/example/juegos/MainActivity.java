@@ -22,9 +22,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Opciones.class);
-                intent.putExtra("name1", nombre1.getText().toString());
-                intent.putExtra("name2", nombre2.getText().toString());
+                Bundle miBundle= new Bundle();
+                miBundle.putString("name1",nombre1.getText().toString());
+                miBundle.putString("name2",nombre2.getText().toString());
+                intent.putExtras(miBundle);
+                startActivity(intent);
                 startActivityForResult(intent, 0);
+
+                //Para pasar los nombres al  triqui
+                /*Intent intent2 = new Intent(v.getContext(), Triqui.class);
+                Bundle bundle= new Bundle();
+                bundle.putString("name1",nombre1.getText().toString());
+                bundle.putString("name2",nombre2.getText().toString());
+                intent2.putExtras(bundle);
+                startActivity(intent2);;*/
             }
 
         });
