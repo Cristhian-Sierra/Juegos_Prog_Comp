@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText nombre1,nombre2;
+
         nombre1=(EditText)findViewById(R.id.txt_name1);
         nombre2=(EditText)findViewById(R.id.txt_name2);
         btn_begin = (Button) findViewById(R.id.btn_begin);
@@ -27,15 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 miBundle.putString("name2",nombre2.getText().toString());
                 intent.putExtras(miBundle);
                 startActivity(intent);
-                startActivityForResult(intent, 0);
-
-                //Para pasar los nombres al  triqui
-                /*Intent intent2 = new Intent(v.getContext(), Triqui.class);
-                Bundle bundle= new Bundle();
-                bundle.putString("name1",nombre1.getText().toString());
-                bundle.putString("name2",nombre2.getText().toString());
-                intent2.putExtras(bundle);
-                startActivity(intent2);;*/
             }
 
         });

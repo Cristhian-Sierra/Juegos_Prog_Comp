@@ -16,4 +16,29 @@
         android:background="#B6FFB9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtN1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugador 1"
+        android:translationX="200px"
+        android:translationY="700px"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="267dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txtN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugador 2"
+        android:translationX="200px"
+        android:translationY="800px"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="305dp">
+
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

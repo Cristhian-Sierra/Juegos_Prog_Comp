@@ -9,6 +9,24 @@
     android:gravity="center_vertical"
     >
 
+
+    <TextView
+        android:id="@+id/txtJugador1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Jugador1 con X"
+        android:translationX="150px"
+        android:translationY="500px" />
+
+    <TextView
+        android:id="@+id/txtJugador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Jugador2 con O"
+        android:translationX="150px"
+        android:translationY="600px" />
     <LinearLayout
         android:id="@+id/fila_1"
         android:layout_width="match_parent"
@@ -26,10 +44,12 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
-            android:text=" "
-            >
+
+
+            android:onClick="onClick"
+            android:text=" ">
 
         </Button>
 
@@ -40,8 +60,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -53,8 +75,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -78,8 +102,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -91,8 +117,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -104,8 +132,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -133,6 +163,7 @@
 
             android:background="#69D16F"
 
+            android:onClick="onClick"
             android:text="  ">
 
         </Button>
@@ -144,8 +175,10 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:width="4dp"
+
             android:background="#69D16F"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
@@ -157,39 +190,23 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
+
             android:background="#69D16F"
-            android:width="4dp"
+
+            android:onClick="onClick"
             android:text=" ">
 
         </Button>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtJugador1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Jugador1 con X"
-        android:translationX="150px"
-        android:translationY="500px" />
-
-    <TextView
-        android:id="@+id/txtJugador2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Jugador2 con O"
-        android:translationX="150px"
-        android:translationY="600px" />
-
     <Button
         android:id="@+id/btnReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jugar de nuevo"
-        android:translationX="400px"
-        android:translationY="500px" />
+        android:text="Reinicar juego"
+        android:translationX="200px"
+        android:translationY="400px" />
 
 
 </RelativeLayout>

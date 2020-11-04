@@ -10,6 +10,8 @@ import android.content.Intent;
 public class Opciones extends AppCompatActivity {
     ListView listView;
     Intent intent;
+    String nombre1,nombre2;
+    TextView txtN1,txtN2;
     //Bundle bundle = getIntent().getExtras();
     //String nombre1=bundle.getString("name1");
     //String nombre2=bundle.getString("name2");
@@ -18,7 +20,21 @@ public class Opciones extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opciones);
 
+        txtN1=(TextView)findViewById(R.id.txtN1);
+        txtN2=(TextView)findViewById(R.id.txtN2);
+        Bundle bundle= getIntent().getExtras();
+        if(bundle!=null) {
+            nombre1 = bundle.getString("name1");
+            String aux = nombre1;
+            txtN1 = (TextView) findViewById(R.id.txtN1);
+            txtN1.setText("Jugador 1 " + aux );
 
+            nombre2 = bundle.getString("name2");
+            String aux2 = nombre2;
+            txtN2 = (TextView) findViewById(R.id.txtN2);
+            txtN2.setText("Jugador 2 " + aux2 );
+
+        }
         listView = (ListView) findViewById(R.id.list_op);
         String[] values = new String[]{"MEMORY",
                     "TRIQUI","CREDITOS"};
@@ -40,11 +56,11 @@ public class Opciones extends AppCompatActivity {
                           break;
                       case 1:
                           intent = new Intent(getApplicationContext(), Triqui.class);
-                          /*Bundle bundle = getIntent().getExtras();
+                          Bundle bundle = getIntent().getExtras();
                           String nombre1=bundle.getString("name1");
                           String nombre2=bundle.getString("name2");
                           intent.putExtra("name1", nombre1);
-                          intent.putExtra("name2", nombre2);*/
+                          intent.putExtra("name2", nombre2);
                           //startActivityForResult(intent, 0);
 
 
