@@ -1,10 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="#B6FFB9"
-    tools:context=".Memoria">
+    android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="SCORE " />
+    <TextView
+        android:id="@+id/scorej1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/scorej2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="" />
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="25dp"
+    android:text="Turno: " />
+    <TextView
+        android:id="@+id/turno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/BotonA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="A"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="B"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="C"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="D"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="E"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="F"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="G"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="H"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/BotonI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:text="I"
+            android:textSize="15dp">
+
+        </Button>
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/letrasj1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/letrasj2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="" />
+
+
+</LinearLayout>

@@ -50,8 +50,7 @@ public class Opciones extends AppCompatActivity {
                   String itemValue = (String) listView.getItemAtPosition(posicion);
                   switch (posicion) {
                       case 0:
-                          intent = new
-                                  Intent(getApplicationContext(), Memoria.class);
+                          intent = new Intent(getApplicationContext(), Memoria.class);
 
                           break;
                       case 1:
