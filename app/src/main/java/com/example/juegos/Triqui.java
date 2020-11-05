@@ -63,7 +63,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         btn3.setOnClickListener( this);
         btn4.setOnClickListener( this);
         btn5.setOnClickListener( this);
-        btn6.setOnClickListener(this);
+        btn6.setOnClickListener( this);
         btn7.setOnClickListener( this);
         btn8.setOnClickListener( this);
         btnR.setOnClickListener( this);

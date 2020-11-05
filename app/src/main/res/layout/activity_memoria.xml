@@ -1,67 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="#B6FFB9"
     android:gravity="center">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="SCORE " />
-    <TextView
-        android:id="@+id/scorej1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="" />
-    <TextView
-        android:id="@+id/scorej2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="" />
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="243dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="25dp"
-    android:text="Turno: " />
-    <TextView
-        android:id="@+id/turno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="" />
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SCORE "
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <TextView
+            android:id="@+id/textViewScore1"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textViewScore2"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="202dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/textViewTurno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+    </LinearLayout>
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="200dp"
         android:columnCount="3"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
         <Button
             android:id="@+id/BotonA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
             android:padding="32dp"
             android:text="A"
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
             android:padding="32dp"
             android:text="B"
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonC"
             android:layout_width="wrap_content"
@@ -71,6 +136,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonD"
             android:layout_width="wrap_content"
@@ -80,6 +146,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonE"
             android:layout_width="wrap_content"
@@ -89,6 +156,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonF"
             android:layout_width="wrap_content"
@@ -98,6 +166,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonG"
             android:layout_width="wrap_content"
@@ -107,6 +176,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonH"
             android:layout_width="wrap_content"
@@ -116,6 +186,7 @@
             android:textSize="15dp">
 
         </Button>
+
         <Button
             android:id="@+id/BotonI"
             android:layout_width="wrap_content"
@@ -128,18 +199,5 @@
 
     </GridLayout>
 
-    <TextView
-        android:id="@+id/letrasj1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="" />
-    <TextView
-        android:id="@+id/letrasj2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="" />
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
