@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 public class Triqui extends AppCompatActivity implements View.OnClickListener {
     int turno,cont,i=0;
+    int acumJ1=0;
+    int acumJ2=0;
+    int acumEmpates=0;
 
     String letra;
     String nombre1;
@@ -56,7 +59,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         btn8 = (Button) findViewById(R.id.btn8);
         btnR = (Button) findViewById(R.id.btnReiniciar);
 
-        //Metidos para dar eventos a cada boton
+        //Metodos para dar eventos a cada boton
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener( this);
@@ -170,285 +173,482 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
          Ganador(letra,nom);
 
     }
+//METODO PARA DETERMINAR AL GANADOR
     public void Ganador(char letra, String nomb){
 
-        String ganador="El ganador(a) es: ";
-        //Posibilidad de ganar 1
-        if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
-        {
-        AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-        alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog titulo= alerta.create();
-        titulo.setTitle("Salida");
-        titulo.show();
+        if(nomb==nombre1 && letra=='X'){//Condicional para acumular las victorias del jugador 1 con X
 
-        btn8.setEnabled(false);
-        btn7.setEnabled(false);
-        btn6.setEnabled(false);
-        btn5.setEnabled(false);
-        btn4.setEnabled(false);
-        btn3.setEnabled(false);
-    }
-        //2 posibilidad
-        else if((btn3.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn5.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
+            //Posibilidad de ganar 1
+            if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
 
-            btn8.setEnabled(false);
-            btn7.setEnabled(false);
-            btn6.setEnabled(false);
-            btn0.setEnabled(false);
-            btn1.setEnabled(false);
-            btn2.setEnabled(false);
+                btn8.setEnabled(false);
+                btn7.setEnabled(false);
+                btn6.setEnabled(false);
+                btn5.setEnabled(false);
+                btn4.setEnabled(false);
+                btn3.setEnabled(false);
+                acumJ1+=1;
+            }
+            //2 posibilidad
+            else if((btn3.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn5.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Has ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn8.setEnabled(false);
+                btn7.setEnabled(false);
+                btn6.setEnabled(false);
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                acumJ1+=1;
+            }
+            //3 posibilidad
+            else if((btn6.getText().toString().equals(letra+""))&& (btn7.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+
+                acumJ1+=1;
+            }
+            //4 posibilidad
+            else if((btn0.getText().toString().equals(letra+""))&& (btn3.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+                acumJ1+=1;
+            }
+            //5Posibilidad
+            else if((btn1.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn7.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn8.setEnabled(false);
+                btn0.setEnabled(false);
+                acumJ1+=1;
+            }
+            //6 posibilidad
+            else if((btn2.getText().toString().equals(letra+""))&& (btn5.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la  letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn0.setEnabled(false);
+                acumJ1+=1;
+            }
+            //7 posibilidad
+
+            else if((btn0.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                acumJ1+=1;
+            }
+            //8 posibilidad
+            else if((btn2.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+                acumJ1+=1;
+            }
+        else if(i<9){
+            i++;
         }
-        //3 posibilidad
-        else if((btn6.getText().toString().equals(letra+""))&& (btn7.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
+        else{
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Se ha generado un empate")
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
 
-            btn3.setEnabled(false);
-            btn4.setEnabled(false);
-            btn5.setEnabled(false);
-            btn0.setEnabled(false);
-            btn1.setEnabled(false);
-            btn2.setEnabled(false);
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Ninguno ha ganado");
+                titulo.show();
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
         }
-        //4 posibilidad
-        else if((btn0.getText().toString().equals(letra+""))&& (btn3.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
-
-            btn1.setEnabled(false);
-            btn2.setEnabled(false);
-            btn4.setEnabled(false);
-            btn5.setEnabled(false);
-            btn7.setEnabled(false);
-            btn8.setEnabled(false);
-        }
-        //5Posibilidad
-        else if((btn1.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn7.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
-
-            btn2.setEnabled(false);
-            btn3.setEnabled(false);
-            btn5.setEnabled(false);
-            btn6.setEnabled(false);
-            btn8.setEnabled(false);
-            btn0.setEnabled(false);
-        }
-        //6 posibilidad
-        else if((btn2.getText().toString().equals(letra+""))&& (btn5.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
-
-            btn1.setEnabled(false);
-            btn3.setEnabled(false);
-            btn4.setEnabled(false);
-            btn6.setEnabled(false);
-            btn7.setEnabled(false);
-            btn0.setEnabled(false);
-        }
-        //7 posibilidad
-
-        else if((btn0.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
-
-            btn1.setEnabled(false);
-            btn2.setEnabled(false);
-            btn3.setEnabled(false);
-            btn5.setEnabled(false);
-            btn6.setEnabled(false);
-            btn7.setEnabled(false);
-        }
-        //8 posibilidad
-        else if((btn2.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
-        {
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Has ganado la partida "+nomb+" con la letra "+letra)
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Salida");
-            titulo.show();
-
-            btn1.setEnabled(false);
-            btn2.setEnabled(false);
-            btn3.setEnabled(false);
-            btn5.setEnabled(false);
-            btn7.setEnabled(false);
-            btn8.setEnabled(false);
-        }
-    else if(i<9){
-        i++;
-        }
-    else{
-            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-            alerta.setMessage("Se ha generado un empate")
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-                    .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog titulo= alerta.create();
-            titulo.setTitle("Felicidades");
-            titulo.show();
-
-            btn0.setEnabled(false);
-
-            btn1.setEnabled(false);
-
-            btn2.setEnabled(false);
-
-            btn3.setEnabled(false);
-
-            btn4.setEnabled(false);
-
-            btn5.setEnabled(false);
-
-            btn6.setEnabled(false);
-
-            btn7.setEnabled(false);
-
-            btn8.setEnabled(false);
+        txtN1.setText("Jugador con X, llevas "+acumJ1+ " victorias");
 
     }
+        else if(nomb==nombre2 && letra=='O'){//Para acumular victorias de O
 
+            String ganador="El ganador(a) es: ";
+            //Posibilidad de ganar 1
+            if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn8.setEnabled(false);
+                btn7.setEnabled(false);
+                btn6.setEnabled(false);
+                btn5.setEnabled(false);
+                btn4.setEnabled(false);
+                btn3.setEnabled(false);
+                acumJ2+=1;
+            }
+            //2 posibilidad
+            else if((btn3.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn5.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Has ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn8.setEnabled(false);
+                btn7.setEnabled(false);
+                btn6.setEnabled(false);
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                acumJ2+=1;
+            }
+            //3 posibilidad
+            else if((btn6.getText().toString().equals(letra+""))&& (btn7.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+
+                acumJ2+=1;
+            }
+            //4 posibilidad
+            else if((btn0.getText().toString().equals(letra+""))&& (btn3.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+                acumJ2+=1;
+            }
+            //5Posibilidad
+            else if((btn1.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn7.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn8.setEnabled(false);
+                btn0.setEnabled(false);
+                acumJ2+=1;
+            }
+            //6 posibilidad
+            else if((btn2.getText().toString().equals(letra+""))&& (btn5.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la  letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn0.setEnabled(false);
+                acumJ2+=1;
+            }
+            //7 posibilidad
+
+            else if((btn0.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                acumJ2+=1;
+            }
+            //8 posibilidad
+            else if((btn2.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
+            {
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Ha ganado la letra "+letra)
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Felicidades");
+                titulo.show();
+
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn5.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+                acumJ2+=1;
+            }
+            else if(i<9){
+                i++;
+            }
+            else{
+                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+                alerta.setMessage("Se ha generado un empate")
+                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+
+                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog titulo= alerta.create();
+                titulo.setTitle("Ninguno ha ganado");
+                titulo.show();
+
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+            }
+            txtN2.setText("Jugador con O, llevas "+acumJ2+ " victorias");
+
+        }
 
     }
+
 }

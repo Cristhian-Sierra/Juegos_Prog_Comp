@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C0EAA9"
+    android:background="#123456"
     tools:context=".Opciones">
 
     <ListView
@@ -13,7 +13,7 @@
         android:layout_height="729dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:background="#B6FFB9"
+        android:background="#123456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,10 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jugador 1"
-        android:translationX="200px"
+        android:translationX="50px"
         android:translationY="700px"
         tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="267dp">
+        tools:layout_editor_absoluteY="267dp"
+        app:fontFamily="@font/start">
 
     </TextView>
 
@@ -34,10 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jugador 2"
-        android:translationX="200px"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:translationX="50px"
         android:translationY="800px"
         tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="305dp">
+        tools:layout_editor_absoluteY="305dp"
+        app:fontFamily="@font/start">
 
     </TextView>
 
