@@ -36,7 +36,6 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triqui);
         txtN1 = (TextView) findViewById(R.id.txtJugador1);
-        txtN2 = (TextView) findViewById(R.id.txtJugador2);
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null) {
             nombre1 = bundle.getString("name1");
@@ -81,11 +80,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         char o='O';
         String color="";
         if(turno==1){//Jugador 1 con X
-            color="#000000";
+            color="#EF6136";
             ImprimirX_O(x,v,color,nombre1);
         }
         else{//Jugador 2 con O
-            color="#FF0000";
+            color="#EF6136";
             ImprimirX_O(o,v,color,nombre2);
         }
 
