@@ -56,16 +56,21 @@ public class Opciones extends AppCompatActivity {
                       case 1:
                           intent = new Intent(getApplicationContext(), Triqui.class);
                           Bundle bundle = getIntent().getExtras();
-                          String nombre1=bundle.getString("name1");
-                          String nombre2=bundle.getString("name2");
+                          nombre1 = bundle.getString("name1");
+                          nombre2 = bundle.getString("name2");
                           intent.putExtra("name1", nombre1);
                           intent.putExtra("name2", nombre2);
                           //startActivityForResult(intent, 0);
 
 
-                      break;
-                      case 2: intent = new
-                              Intent(getApplicationContext(),Creditos.class);
+                          break;
+                      case 2:
+                          intent = new Intent(getApplicationContext(),Creditos.class);
+                          Bundle bundle2 = getIntent().getExtras();
+                          nombre1=bundle2.getString("name1");
+                          nombre2=bundle2.getString("name2");
+                          intent.putExtra("name1", nombre1);
+                          intent.putExtra("name2", nombre2);
                       break;
                   }
                   startActivity(intent);

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
     Button btn7;
     Button btn8;
     Button btnR;
+    Button btnMnu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         if(bundle!=null) {
             nombre1 = bundle.getString("name1");
             //String aux = nombre1;
-            txtN1.setText("Jugador " + nombre1 + " te toca jugar con X");
+            txtN1.setText("Le toca a " + nombre1 + " con X");
             nombre2 = bundle.getString("name2");
 
             //String aux2 = nombre2;
@@ -61,6 +63,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         btn7 = (Button) findViewById(R.id.btn7);
         btn8 = (Button) findViewById(R.id.btn8);
         btnR = (Button) findViewById(R.id.btnReiniciar);
+        btnMnu=(Button)findViewById(R.id.btnMenu2);
 
         //Metodos para dar eventos a cada boton
         btn0.setOnClickListener(this);
@@ -73,6 +76,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         btn7.setOnClickListener( this);
         btn8.setOnClickListener( this);
         btnR.setOnClickListener( this);
+        btnMnu.setOnClickListener(this);
 
     }
 
@@ -95,8 +99,25 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void ImprimirX_O(char letra,View v,String color, String nom){
+        if(v.getId()==R.id.btnMenu2 || v.getId()==R.id.btnReiniciar){
 
-        if(v.getId()==R.id.btnReiniciar){
+        if(v.getId()==R.id.btnMenu2){
+            /*Intent intent = new Intent(v.getContext(), Opciones.class);
+            Bundle miBundle= new Bundle();
+            miBundle.putString("name1",nombre1);
+            miBundle.putString("name2",nombre2);
+            intent.putExtras(miBundle);
+            startActivity(intent);*/
+            Intent intent = new Intent(getApplicationContext(),Opciones.class);
+            Bundle bundle2 = getIntent().getExtras();
+            nombre1=bundle2.getString("name1");
+            nombre2=bundle2.getString("name2");
+            intent.putExtra("name1", nombre1);
+            intent.putExtra("name2", nombre2);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.btnReiniciar){
             i=0;
             cont=0;
             btn0.setEnabled(true);
@@ -125,62 +146,87 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
 
             btn8.setEnabled(true);
             btn8.setText("");
+            txtN1.setText("Le toca a "+nombre1+" con X");
+            String colorI="#000000";
+            //Cambio de color de botones en reinicio
+            btn0.setBackgroundColor(Color.parseColor(colorI));
+            btn1.setBackgroundColor(Color.parseColor(colorI));
+            btn2.setBackgroundColor(Color.parseColor(colorI));
+            btn3.setBackgroundColor(Color.parseColor(colorI));
+            btn4.setBackgroundColor(Color.parseColor(colorI));
+            btn5.setBackgroundColor(Color.parseColor(colorI));
+            btn6.setBackgroundColor(Color.parseColor(colorI));
+            btn7.setBackgroundColor(Color.parseColor(colorI));
+            btn8.setBackgroundColor(Color.parseColor(colorI));
+
         }
-        else if(v.getId()==R.id.btn0){
+        }
+        else if(v.getId()==R.id.btn0||v.getId()==R.id.btn1||v.getId()==R.id.btn2||v.getId()==R.id.btn3||v.getId()==R.id.btn4||v.getId()==R.id.btn5||v.getId()==R.id.btn6||v.getId()==R.id.btn7||v.getId()==R.id.btn8){
+        if(v.getId()==R.id.btn0){
             btn0.setTextColor(Color.parseColor(color));
             btn0.setText(""+letra);
             btn0.setEnabled(false);
+            //Ganador(letra,nom);
         }
 
         else  if(v.getId()==R.id.btn1){
             btn1.setTextColor(Color.parseColor(color));
             btn1.setText(""+letra);
             btn1.setEnabled(false);
+            //Ganador(letra,nom);
         }
 
         else  if(v.getId()==R.id.btn2){
              btn2.setTextColor(Color.parseColor(color));
              btn2.setText(""+letra);
              btn2.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else  if(v.getId()==R.id.btn3){
              btn3.setTextColor(Color.parseColor(color));
              btn3.setText(""+letra);
              btn3.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else if(v.getId()==R.id.btn4){
              btn4.setTextColor(Color.parseColor(color));
              btn4.setText(""+letra);
              btn4.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else  if(v.getId()==R.id.btn5){
              btn5.setTextColor(Color.parseColor(color));
              btn5.setText(""+letra);
              btn5.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else  if(v.getId()==R.id.btn6){
              btn6.setTextColor(Color.parseColor(color));
              btn6.setText(""+letra);
              btn6.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else  if(v.getId()==R.id.btn7){
              btn7.setTextColor(Color.parseColor(color));
              btn7.setText(""+letra);
              btn7.setEnabled(false);
+            //Ganador(letra,nom);
          }
         else  if(v.getId()==R.id.btn8){
              btn8.setTextColor(Color.parseColor(color));
              btn8.setText(""+letra);
              btn8.setEnabled(false);
+
          }
-         Ganador(letra,nom);
+        Ganador(letra,nom);
+        }
 
     }
 //METODO PARA DETERMINAR AL GANADOR
     public void Ganador(char letra, String nomb){
-
+        String colorG="#123456";
         if(nomb==nombre1 && letra=='X'){//Condicional para acumular las victorias del jugador 1 con X
-
+            //txtN1.setText("Le toca a " +nombre2 + " con O");
             //Posibilidad de ganar 1
             if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
             {
@@ -196,6 +242,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Se cambian los colores de donde esté el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn1.setBackgroundColor(Color.parseColor(colorG));
+                btn2.setBackgroundColor(Color.parseColor(colorG));
 
                 btn8.setEnabled(false);
                 btn7.setEnabled(false);
@@ -221,6 +272,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Se cambian los colores de donde esté el triqui
+                btn3.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn5.setBackgroundColor(Color.parseColor(colorG));
 
                 btn8.setEnabled(false);
                 btn7.setEnabled(false);
@@ -251,6 +307,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+                //Se cambian los colores de donde esté el triqui
+                btn6.setBackgroundColor(Color.parseColor(colorG));
+                btn7.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
 
                 btn3.setEnabled(false);
                 btn4.setEnabled(false);
@@ -276,6 +336,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+                //Se cambian los colores de donde esté el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn3.setBackgroundColor(Color.parseColor(colorG));
+                btn6.setBackgroundColor(Color.parseColor(colorG));
 
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
@@ -302,6 +366,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                //Se cambian los colores de donde esté el triqui
+                btn1.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn7.setBackgroundColor(Color.parseColor(colorG));
+
                 btn2.setEnabled(false);
                 btn3.setEnabled(false);
                 btn5.setEnabled(false);
@@ -326,6 +395,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+                //Se cambian los colores de donde esté el triqui
+                btn2.setBackgroundColor(Color.parseColor(colorG));
+                btn5.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
 
                 btn1.setEnabled(false);
                 btn3.setEnabled(false);
@@ -352,6 +425,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                //Se cambian los colores de donde esté el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
+
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
                 btn3.setEnabled(false);
@@ -376,6 +454,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                //Se cambian los colores de donde esté el triqui
+                btn2.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn6.setBackgroundColor(Color.parseColor(colorG));
+
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
                 btn3.setEnabled(false);
@@ -387,7 +470,18 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         else if(i<9){
             i++;
         }
-        else{
+        else{//Empate
+
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Se ha generado un empate")
                         .setCancelable(false)//Paara salir del aleert pulsando fuera de el
@@ -401,23 +495,14 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Ninguno ha ganado");
                 titulo.show();
-                btn0.setEnabled(false);
-                btn1.setEnabled(false);
-                btn2.setEnabled(false);
-                btn3.setEnabled(false);
-                btn4.setEnabled(false);
-                btn5.setEnabled(false);
-                btn6.setEnabled(false);
-                btn7.setEnabled(false);
-                btn8.setEnabled(false);
-        }
-            txtresul1.setText(""+acumJ1);
-        txtN1.setText("Le toca a" + nombre1 + " con X");
+            }
+            txtN1.setText("Le toca a " +nombre2 + " con O");
+            txtresul1.setText("Victorias "+ nombre1+": "+acumJ1+"");
+
 
     }
         else if(nomb==nombre2 && letra=='O'){//Para acumular victorias de O
-
-            String ganador="El ganador(a) es: ";
+            txtN1.setText("Le toca a " +nombre1 + " con X");
             //Posibilidad de ganar 1
             if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
             {
@@ -433,6 +518,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Se cambian los colores de donde esté el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn1.setBackgroundColor(Color.parseColor(colorG));
+                btn2.setBackgroundColor(Color.parseColor(colorG));
 
                 btn8.setEnabled(false);
                 btn7.setEnabled(false);
@@ -458,6 +548,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Se cambian los colores de donde esté el triqui
+                btn3.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn5.setBackgroundColor(Color.parseColor(colorG));
 
                 btn8.setEnabled(false);
                 btn7.setEnabled(false);
@@ -489,6 +584,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                btn6.setBackgroundColor(Color.parseColor(colorG));
+                btn7.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
+
                 btn3.setEnabled(false);
                 btn4.setEnabled(false);
                 btn5.setEnabled(false);
@@ -513,6 +612,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+                //Cambio de color de botones en donde está el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn3.setBackgroundColor(Color.parseColor(colorG));
+                btn6.setBackgroundColor(Color.parseColor(colorG));
 
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
@@ -539,6 +642,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                //Cambio de color de botones en donde está el triqui
+                btn1.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn7.setBackgroundColor(Color.parseColor(colorG));
+
                 btn2.setEnabled(false);
                 btn3.setEnabled(false);
                 btn5.setEnabled(false);
@@ -563,6 +671,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Cambio de color de botones en donde está el triqui
+                btn2.setBackgroundColor(Color.parseColor(colorG));
+                btn5.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
 
                 btn1.setEnabled(false);
                 btn3.setEnabled(false);
@@ -589,6 +702,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 titulo.setTitle("Felicidades");
                 titulo.show();
 
+                //Cambio de color de botones en donde está el triqui
+                btn0.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn8.setBackgroundColor(Color.parseColor(colorG));
+
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
                 btn3.setEnabled(false);
@@ -612,6 +730,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Felicidades");
                 titulo.show();
+
+                //Cambio de color de botones en donde está el triqui
+                btn2.setBackgroundColor(Color.parseColor(colorG));
+                btn4.setBackgroundColor(Color.parseColor(colorG));
+                btn6.setBackgroundColor(Color.parseColor(colorG));
 
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
@@ -625,6 +748,17 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 i++;
             }
             else{
+
+                btn0.setEnabled(false);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
+                btn7.setEnabled(false);
+                btn8.setEnabled(false);
+
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Se ha generado un empate")
                         .setCancelable(false)//Paara salir del aleert pulsando fuera de el
@@ -638,20 +772,13 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog titulo= alerta.create();
                 titulo.setTitle("Ninguno ha ganado");
                 titulo.show();
-
-                btn0.setEnabled(false);
-                btn1.setEnabled(false);
-                btn2.setEnabled(false);
-                btn3.setEnabled(false);
-                btn4.setEnabled(false);
-                btn5.setEnabled(false);
-                btn6.setEnabled(false);
-                btn7.setEnabled(false);
-                btn8.setEnabled(false);
             }
 
-          txtresul2.setText(""+ acumJ2);
-            txtN1.setText("Le toca a " + nombre2 + " con O");
+            txtN1.setText("Le toca a " +nombre1 + " con X");
+            txtresul2.setText("Victorias "+ nombre2+": "+acumJ2+"");
+
+
+
 
         }
 

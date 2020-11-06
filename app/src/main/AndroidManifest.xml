@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Creditos"></activity>
+        <activity android:name=".Creditos" />
         <activity android:name=".Triqui" />
         <activity android:name=".Memoria" />
         <activity android:name=".Opciones" />

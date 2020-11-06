@@ -37,7 +37,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMenu3"
+        app:layout_constraintBottom_toTopOf="@+id/btnMnu3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonMenu3"
+        android:id="@+id/btnMnu3"
         android:layout_width="92dp"
         android:layout_height="50dp"
         android:layout_marginStart="162dp"
