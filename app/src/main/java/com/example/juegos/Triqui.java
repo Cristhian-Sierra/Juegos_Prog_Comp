@@ -20,7 +20,8 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
     String nombre1;
     String nombre2;
     TextView txtN1;
-    TextView txtN2;
+    TextView txtresul1;
+    TextView txtresul2;
     Button btn0;
     Button btn1;
     Button btn2;
@@ -36,14 +37,17 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triqui);
         txtN1 = (TextView) findViewById(R.id.txtJugador1);
+        txtresul1=(TextView) findViewById(R.id.textViewPuntaje1);
+        txtresul2=(TextView) findViewById(R.id.textViewPuntaje2);
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null) {
             nombre1 = bundle.getString("name1");
             //String aux = nombre1;
             txtN1.setText("Jugador " + nombre1 + " te toca jugar con X");
             nombre2 = bundle.getString("name2");
+
             //String aux2 = nombre2;
-            txtN2.setText("Jugador " + nombre2 + " te toca jugar con O");
+           // txtN2.setText("Jugador " + nombre2 + " te toca jugar con O");
 
         }
 
@@ -407,7 +411,8 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
         }
-        txtN1.setText("Jugador con X, llevas "+acumJ1+ " victorias");
+            txtresul1.setText(""+acumJ1);
+        txtN1.setText("Le toca a" + nombre1 + " con X");
 
     }
         else if(nomb==nombre2 && letra=='O'){//Para acumular victorias de O
@@ -644,7 +649,9 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
             }
-            txtN2.setText("Jugador con O, llevas "+acumJ2+ " victorias");
+
+          txtresul2.setText(""+ acumJ2);
+            txtN1.setText("Le toca a " + nombre2 + " con O");
 
         }
 
