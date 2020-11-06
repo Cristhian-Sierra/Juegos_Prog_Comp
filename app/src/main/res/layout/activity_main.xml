@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#123456"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textViewJuegos"
-        android:layout_width="235dp"
-        android:layout_height="75dp"
+        android:layout_width="269dp"
+        android:layout_height="77dp"
         android:layout_marginStart="126dp"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="28dp"
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:text="JUEGOS UD"
         android:textColor="#EF6136"
-        android:textSize="60dp"
+        android:textSize="65dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

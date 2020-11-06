@@ -6,13 +6,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:background="#B6FFB9"
+    android:background="@drawable/background"
     android:gravity="center">
 
     <LinearLayout
         android:id="@+id/linearLayout9"
-        android:layout_width="243dp"
-        android:layout_height="45dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="75dp"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="35dp"
@@ -28,8 +28,12 @@
             android:id="@+id/textViewScore"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="SCORE "
-            android:textSize="25dp" />
+            android:background="@drawable/button_rounded_border"
+            android:fontFamily="@font/start"
+            android:gravity="center"
+            android:text="score"
+            android:textColor="#EF6136"
+            android:textSize="45dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,27 +51,31 @@
             android:id="@+id/textViewScore1"
             android:layout_width="95dp"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:gravity="center"
+            android:textColor="#EF6136"
+            android:textSize="25dp" />
 
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="13dp"
             android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewScore2"
             android:layout_width="95dp"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:gravity="center"
+            android:textColor="#EF6136"
+            android:textSize="25dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout10"
-        android:layout_width="202dp"
-        android:layout_height="45dp"
+        android:layout_width="237dp"
+        android:layout_height="48dp"
         android:layout_marginStart="95dp"
         android:layout_marginLeft="95dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="95dp"
         android:layout_marginRight="95dp"
         android:orientation="vertical"
@@ -81,7 +89,10 @@
             android:id="@+id/textViewTurno"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:gravity="center"
+            android:textColor="#EF6136"
+            android:textSize="30dp"
+            app:fontFamily="@font/vt"/>
     </LinearLayout>
 
     <GridLayout
@@ -94,10 +105,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="65dp"
         android:layout_marginRight="65dp"
-        android:layout_marginBottom="200dp"
         android:columnCount="3"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,9 +117,13 @@
             android:id="@+id/BotonA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
             android:layout_row="0"
             android:layout_column="0"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="A"
             android:textSize="15dp">
 
@@ -119,9 +133,13 @@
             android:id="@+id/BotonB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
             android:layout_row="0"
             android:layout_column="1"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="B"
             android:textSize="15dp">
 
@@ -131,7 +149,13 @@
             android:id="@+id/BotonC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="0"
+            android:layout_column="2"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="C"
             android:textSize="15dp">
 
@@ -141,7 +165,13 @@
             android:id="@+id/BotonD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="1"
+            android:layout_column="0"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="D"
             android:textSize="15dp">
 
@@ -151,7 +181,13 @@
             android:id="@+id/BotonE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="1"
+            android:layout_column="1"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="E"
             android:textSize="15dp">
 
@@ -161,7 +197,13 @@
             android:id="@+id/BotonF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="1"
+            android:layout_column="2"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="F"
             android:textSize="15dp">
 
@@ -171,7 +213,13 @@
             android:id="@+id/BotonG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="2"
+            android:layout_column="0"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="G"
             android:textSize="15dp">
 
@@ -181,7 +229,13 @@
             android:id="@+id/BotonH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="2"
+            android:layout_column="1"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="H"
             android:textSize="15dp">
 
@@ -191,13 +245,84 @@
             android:id="@+id/BotonI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:background="#EF6136"
+            android:textColor="#000000"
+            android:layout_row="2"
+            android:layout_column="2"
             android:padding="32dp"
+            android:fontFamily="@font/start"
             android:text="I"
             android:textSize="15dp">
 
         </Button>
 
     </GridLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="240dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
+        android:gravity="center"
+        android:textColor="#EF6136"
+        android:textSize="25dp"
+        app:fontFamily="@font/vt"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <Button
+            android:id="@+id/buttonRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded_border_game"
+            android:fontFamily="@font/vt"
+            android:gravity="center"
+            android:text="Reiniciar"
+            android:textColor="#000000"
+            android:textSize="30dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/buttonMenu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded_border_game"
+            android:fontFamily="@font/vt"
+            android:gravity="center"
+            android:text="Menú"
+            android:textColor="#000000"
+            android:textSize="30dp" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
