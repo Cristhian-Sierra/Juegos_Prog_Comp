@@ -63,14 +63,26 @@ public class Memoria extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        List<String> list = new ArrayList<>();
-        Secuencia(v);
-
+        int score1, score2,turno, contador=1;
+        contador++;
+        turno = contador%2;
+        if(turno == 1){
+            Secuencia(v);
+        }
+        else{
+            Secuencia(v);
+        }
     }
 
     private void Secuencia (View v){
+        List<String> list = new ArrayList<>();
+        Secuencia(v);
         if(v.getId()==R.id.buttonA){
 
         }
+    }
+
+    private void Comparar(){
+
     }
 }

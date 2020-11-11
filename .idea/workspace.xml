@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="184b0094-5ffb-4183-a142-9ef49e1026b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/juegos/Memoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/juegos/Memoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_memoria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_memoria.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/ControlesBasicos" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/Snake-master" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -180,12 +178,12 @@
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="394" y="139" key="Downloadable.Font.Dialog.Size/62.0.1304.768/1428.0.1218.720@62.0.1304.768" timestamp="1604541523729" />
-    <state x="564" y="204" key="FileChooserDialogImpl" timestamp="1604881933429">
+    <state x="564" y="204" key="FileChooserDialogImpl" timestamp="1605056280127">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604456813812" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604168604169" />
-    <state x="564" y="204" key="FileChooserDialogImpl/62.0.1304.768/1428.0.1218.720@62.0.1304.768" timestamp="1604881933429" />
+    <state x="564" y="204" key="FileChooserDialogImpl/62.0.1304.768/1428.0.1218.720@62.0.1304.768" timestamp="1605056280127" />
     <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1604638657309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -214,11 +212,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604283664505" />
-    <state x="759" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1604881092427">
+    <state x="759" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1605050106157">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="759" y="241" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1604683775300" />
     <state x="1150" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604180162188" />
-    <state x="759" y="254" key="com.intellij.ide.util.TipDialog/62.0.1304.768/1428.0.1218.720@62.0.1304.768" timestamp="1604881092427" />
+    <state x="759" y="254" key="com.intellij.ide.util.TipDialog/62.0.1304.768/1428.0.1218.720@62.0.1304.768" timestamp="1605050106157" />
   </component>
 </project>
