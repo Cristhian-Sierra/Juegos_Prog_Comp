@@ -27,6 +27,11 @@ public class Memoria extends AppCompatActivity implements View.OnClickListener {
     private Button buttonI;
     private Button buttonRestart;
     private Button buttonMenu2;
+    private int teclas = 0;
+    private int turno = 0;
+    private String player1, player2;
+    private List<Button> letrasp1 = new ArrayList<>();
+    private List<Button> letrasp2 = new ArrayList<>();
 
 
     @Override
@@ -38,6 +43,7 @@ public class Memoria extends AppCompatActivity implements View.OnClickListener {
         this.textViewScore2 = findViewById(R.id.textViewScore2);
         this.textViewTurno = findViewById(R.id.textViewTurno);
         this.textViewLoser = findViewById(R.id.textViewLoser);
+
         this.buttonA = findViewById(R.id.buttonA);
         this.buttonB = findViewById(R.id.buttonB);
         this.buttonC = findViewById(R.id.buttonC);
@@ -49,6 +55,12 @@ public class Memoria extends AppCompatActivity implements View.OnClickListener {
         this.buttonI = findViewById(R.id.buttonI);
         this.buttonRestart = findViewById(R.id.buttonRestart);
         this.buttonMenu2 = findViewById(R.id.buttonMenu2);
+
+        Bundle bundle= getIntent().getExtras();
+        if(bundle != null){
+            player1 = bundle.getString("name1");
+            player2 = bundle.getString("name2");
+        }
 
         buttonA.setOnClickListener(this);
         buttonB.setOnClickListener(this);
@@ -63,26 +75,113 @@ public class Memoria extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        int score1, score2,turno, contador=1;
-        contador++;
-        turno = contador%2;
-        if(turno == 1){
-            Secuencia(v);
+        teclas++;
+        System.out.println(teclas);
+        if(teclas == 1){
+            game(teclas, player1, v);
+        }else if (teclas == 2 || teclas == 3){
+            game(teclas, player2, v);
         }
-        else{
-            Secuencia(v);
-        }
+
     }
 
-    private void Secuencia (View v){
-        List<String> list = new ArrayList<>();
-        Secuencia(v);
-        if(v.getId()==R.id.buttonA){
+    public void game (int c, String name, View view){
 
+        if (name == player1){
+            switch (view.getId()){
+                case R.id.buttonA:{
+                    letrasp1.add(buttonA);
+                    System.out.println("A");
+                    break;
+                }
+                case R.id.buttonB:{
+                    letrasp1.add(buttonB);
+                    System.out.println("B");
+                    break;
+                }
+                case R.id.buttonC:{
+                    letrasp1.add(buttonC);
+                    System.out.println("C");
+                    break;
+                }
+                case R.id.buttonD:{
+                    letrasp1.add(buttonD);
+                    System.out.println("D");
+                    break;
+                }
+                case R.id.buttonE:{
+                    letrasp1.add(buttonE);
+                    System.out.println("E");
+                    break;
+                }
+                case R.id.buttonF:{
+                    letrasp1.add(buttonF);
+                    System.out.println("F");
+                    break;
+                }
+                case R.id.buttonG:{
+                    letrasp1.add(buttonG);
+                    System.out.println("G");
+                    break;
+                }
+                case R.id.buttonH:{
+                    letrasp1.add(buttonH);
+                    System.out.println("H");
+                    break;
+                }
+                case R.id.buttonI:{
+                    letrasp1.add(buttonI);
+                    System.out.println("I");
+                    break;
+                }
+                default:break;
+
+            }
+            for (int i = 0; i<letrasp1.size(); i++){
+                System.out.println(letrasp1);
+            }
+        }else if(name == player2){
+            switch (view.getId()){
+                case R.id.buttonA:{
+                    letrasp2.add(buttonA);
+                    System.out.println("A");
+                    break;
+                }
+                case R.id.buttonB:{
+                    letrasp2.add(buttonB);
+                    break;
+                }
+                case R.id.buttonC:{
+                    letrasp2.add(buttonC);
+                    break;
+                }
+                case R.id.buttonD:{
+                    letrasp2.add(buttonD);
+                    break;
+                }
+                case R.id.buttonE:{
+                    letrasp2.add(buttonE);
+                    break;
+                }
+                case R.id.buttonF:{
+                    letrasp2.add(buttonF);
+                    break;
+                }
+                case R.id.buttonG:{
+                    letrasp2.add(buttonG);
+                    break;
+                }
+                case R.id.buttonH:{
+                    letrasp2.add(buttonH);
+                    break;
+                }
+                case R.id.buttonI:{
+                    letrasp2.add(buttonI);
+                    break;
+                }
+                default:break;
+            }
         }
-    }
-
-    private void Comparar(){
 
     }
 }
