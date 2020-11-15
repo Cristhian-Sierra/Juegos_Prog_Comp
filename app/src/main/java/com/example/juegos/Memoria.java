@@ -63,6 +63,7 @@ public class Memoria extends AppCompatActivity {
         display.getSize(size);
         int width = size.x;
         int height = size.y;
+
         tableroCont = findViewById(R.id.tableroCont);
         final Button tiles[][] = new Button[3][3];
         this.letras = new ArrayList<Character>();
@@ -74,7 +75,8 @@ public class Memoria extends AppCompatActivity {
             player2 = bundle.getString("name2");
             textViewScoreName2.setText(player2);
         }
-
+        textViewScore1.setText(""+puntaje1);
+        textViewScore2.setText(""+puntaje2);
         int letra = 65;
         textViewTurno.setText((turno % 2 != 0 ? player1 : player2));
         this.remain = false;
@@ -133,6 +135,11 @@ public class Memoria extends AppCompatActivity {
                                     }
                                 }
                                 textViewLoser.setText("Perdió \n" + (turno % 2 != 0 ? player1 : player2));
+                                if(turno % 2 != 0 ){
+                                    puntaje1++;
+                                }else{
+                                    puntaje2++;
+                                }
                                 return true;
                             } else {
                                 yield++;

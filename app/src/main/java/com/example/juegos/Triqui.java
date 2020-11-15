@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Triqui extends AppCompatActivity implements View.OnClickListener {
-    int turno,cont,i=0;
+    int turno,cont;
     int acumJ1=0;
     int acumJ2=0;
     int acumEmpates=0;
-
+    int cantidadbot=0,activador=0;
     String letra;
     String nombre1;
     String nombre2;
@@ -45,6 +45,8 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         txtresul2=(TextView) findViewById(R.id.textViewPuntaje2);
         textViewJu1=(TextView) findViewById(R.id.textViewJu1);
         textViewJu2=(TextView) findViewById(R.id.textViewJu2);
+        txtresul2.setText(acumJ2+"");
+        txtresul1.setText(acumJ1+"");
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null) {
             nombre1 = bundle.getString("name1");
@@ -120,11 +122,14 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             nombre2=bundle2.getString("name2");
             intent.putExtra("name1", nombre1);
             intent.putExtra("name2", nombre2);
+
             startActivity(intent);
 
         }
         else if(v.getId()==R.id.btnReiniciar){
-            i=0;
+            activador=0;
+            cantidadbot=0;
+
             cont=0;
             btn0.setEnabled(true);
             btn0.setText("");
@@ -172,6 +177,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             btn0.setTextColor(Color.parseColor(color));
             btn0.setText(""+letra);
             btn0.setEnabled(false);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
+
             //Ganador(letra,nom);
         }
 
@@ -180,6 +189,9 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             btn1.setText(""+letra);
             btn1.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
         }
 
         else  if(v.getId()==R.id.btn2){
@@ -187,44 +199,67 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
              btn2.setText(""+letra);
              btn2.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else  if(v.getId()==R.id.btn3){
              btn3.setTextColor(Color.parseColor(color));
              btn3.setText(""+letra);
              btn3.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else if(v.getId()==R.id.btn4){
              btn4.setTextColor(Color.parseColor(color));
              btn4.setText(""+letra);
              btn4.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else  if(v.getId()==R.id.btn5){
              btn5.setTextColor(Color.parseColor(color));
              btn5.setText(""+letra);
              btn5.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else  if(v.getId()==R.id.btn6){
              btn6.setTextColor(Color.parseColor(color));
              btn6.setText(""+letra);
              btn6.setEnabled(false);
             //Ganador(letra,nom);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else  if(v.getId()==R.id.btn7){
              btn7.setTextColor(Color.parseColor(color));
              btn7.setText(""+letra);
              btn7.setEnabled(false);
+            cantidadbot++;
             //Ganador(letra,nom);
+            System.out.println(cantidadbot);
+            System.out.println(activador);
          }
         else  if(v.getId()==R.id.btn8){
              btn8.setTextColor(Color.parseColor(color));
              btn8.setText(""+letra);
              btn8.setEnabled(false);
+            cantidadbot++;
+            System.out.println(cantidadbot);
+            System.out.println(activador);
 
          }
+
         Ganador(letra,nom);
+        empate();
         }
 
     }
@@ -232,7 +267,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
     public void Ganador(char letra, String nomb){
         String colorG="#123456";
         if(nomb==nombre1 && letra=='X'){//Condicional para acumular las victorias del jugador 1 con X
-            //txtN1.setText("Le toca a " +nombre2 + " con O");
+            txtN1.setText("Le toca a " +nombre2 + " con O");
             //Posibilidad de ganar 1
             if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
             {
@@ -261,6 +296,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn4.setEnabled(false);
                 btn3.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //2 posibilidad
             else if((btn3.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn5.getText().toString().equals(letra+""))))
@@ -291,6 +327,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //3 posibilidad
             else if((btn6.getText().toString().equals(letra+""))&& (btn7.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
@@ -326,6 +363,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn2.setEnabled(false);
 
                 acumJ1+=1;
+                activador=1;
             }
             //4 posibilidad
             else if((btn0.getText().toString().equals(letra+""))&& (btn3.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
@@ -354,6 +392,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //5Posibilidad
             else if((btn1.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn7.getText().toString().equals(letra+""))))
@@ -384,6 +423,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn8.setEnabled(false);
                 btn0.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //6 posibilidad
             else if((btn2.getText().toString().equals(letra+""))&& (btn5.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
@@ -413,6 +453,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn0.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //7 posibilidad
 
@@ -443,6 +484,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn6.setEnabled(false);
                 btn7.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
             //8 posibilidad
             else if((btn2.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
@@ -472,38 +514,10 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
                 acumJ1+=1;
+                activador=1;
             }
-        else if(i<9){
-            i++;
-        }
-        else{//Empate
-
-                btn0.setEnabled(false);
-                btn1.setEnabled(false);
-                btn2.setEnabled(false);
-                btn3.setEnabled(false);
-                btn4.setEnabled(false);
-                btn5.setEnabled(false);
-                btn6.setEnabled(false);
-                btn7.setEnabled(false);
-                btn8.setEnabled(false);
-
-                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-                alerta.setMessage("Se ha generado un empate")
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-
-                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog titulo= alerta.create();
-                titulo.setTitle("Ninguno ha ganado");
-                titulo.show();
-            }
-            txtN1.setText("Le toca a " +nombre2 + " con O");
-            txtresul1.setText(acumJ1 + "");
+            txtresul2.setText(acumJ2+"");
+            txtresul1.setText(acumJ1+"");
     }
         else if(nomb==nombre2 && letra=='O'){//Para acumular victorias de O
             txtN1.setText("Le toca a " +nombre1 + " con X");
@@ -535,6 +549,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn4.setEnabled(false);
                 btn3.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //2 posibilidad
             else if((btn3.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn5.getText().toString().equals(letra+""))))
@@ -565,6 +580,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn1.setEnabled(false);
                 btn2.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //3 posibilidad
             else if((btn6.getText().toString().equals(letra+""))&& (btn7.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
@@ -600,6 +616,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn2.setEnabled(false);
 
                 acumJ2+=1;
+                activador=1;
             }
             //4 posibilidad
             else if((btn0.getText().toString().equals(letra+""))&& (btn3.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
@@ -628,6 +645,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //5Posibilidad
             else if((btn1.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn7.getText().toString().equals(letra+""))))
@@ -658,6 +676,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn8.setEnabled(false);
                 btn0.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //6 posibilidad
             else if((btn2.getText().toString().equals(letra+""))&& (btn5.getText().toString().equals(letra+"") &&(btn8.getText().toString().equals(letra+""))))
@@ -688,6 +707,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn0.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //7 posibilidad
 
@@ -718,6 +738,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn6.setEnabled(false);
                 btn7.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
             //8 posibilidad
             else if((btn2.getText().toString().equals(letra+""))&& (btn4.getText().toString().equals(letra+"") &&(btn6.getText().toString().equals(letra+""))))
@@ -747,38 +768,28 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
                 btn7.setEnabled(false);
                 btn8.setEnabled(false);
                 acumJ2+=1;
+                activador=1;
             }
-            else if(i<9){
-                i++;
-            }
-            else{
 
-                btn0.setEnabled(false);
-                btn1.setEnabled(false);
-                btn2.setEnabled(false);
-                btn3.setEnabled(false);
-                btn4.setEnabled(false);
-                btn5.setEnabled(false);
-                btn6.setEnabled(false);
-                btn7.setEnabled(false);
-                btn8.setEnabled(false);
-
-                AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
-                alerta.setMessage("Se ha generado un empate")
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
-
-                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog titulo= alerta.create();
-                titulo.setTitle("Ninguno ha ganado");
-                titulo.show();
-            }
-            txtN1.setText("Le toca a " +nombre1 + " con X");
             txtresul2.setText(acumJ2+"");
+            txtresul1.setText(acumJ1+"");
+        }
+    }
+    public void empate(){
+        if(activador == 0 && cantidadbot == 9){
+
+            AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
+            alerta.setMessage("Para tener una revacha presiona reiniciar")
+                    .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                    .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog titulo= alerta.create();
+            titulo.setTitle("EMPATE");
+            titulo.show();
         }
     }
 }
