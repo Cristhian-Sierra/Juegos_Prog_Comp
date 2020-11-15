@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Triqui"
-    android:gravity="center_vertical"
-    >
+    tools:context=".Triqui">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -15,13 +13,15 @@
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling">
 
         <TextView
             android:id="@+id/textViewPuntaje"
@@ -36,43 +36,71 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="279dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout7"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.514">
 
-        <TextView
-            android:id="@+id/textViewPuntaje1"
-            android:layout_width="128dp"
-            android:layout_height="63dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="#EF6136"
-            android:textSize="25dp" />
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
 
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="13dp"
-            android:layout_weight="1" />
+            <TextView
+                android:id="@+id/textViewJu1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/start"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textSize="18dp" />
 
-        <TextView
-            android:id="@+id/textViewPuntaje2"
-            android:layout_width="119dp"
-            android:layout_height="62dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="#EF6136"
-            android:textSize="25dp" />
+            <TextView
+                android:id="@+id/textViewJu2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/start"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewPuntaje1"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/start"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textViewPuntaje2"
+                android:layout_width="119dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/start"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <GridLayout
@@ -80,20 +108,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginTop="8dp"
         android:columnCount="3"
         android:orientation="horizontal"
         android:rowCount="3"
         app:layout_constraintBottom_toTopOf="@+id/txtJugador1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
         tools:ignore="MissingConstraints">
 
         <Button
@@ -104,8 +126,8 @@
             android:layout_column="0"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -119,8 +141,8 @@
             android:layout_column="1"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -134,8 +156,8 @@
             android:layout_column="2"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -149,8 +171,8 @@
             android:layout_column="0"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -164,8 +186,8 @@
             android:layout_column="1"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -179,8 +201,8 @@
             android:layout_column="2"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -194,8 +216,8 @@
             android:layout_column="0"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -209,8 +231,8 @@
             android:layout_column="1"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -224,8 +246,8 @@
             android:layout_column="2"
             android:layout_margin="2sp"
             android:background="#000000"
-            android:padding="32dp"
             android:fontFamily="@font/start"
+            android:padding="32dp"
             android:textColor="#EF6136"
             android:textSize="15dp">
 
@@ -242,9 +264,9 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:gravity="center"
-        android:textColor="#EF6136"
-        android:textSize="28dp"
-        app:fontFamily="@font/vt"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:fontFamily="@font/start"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

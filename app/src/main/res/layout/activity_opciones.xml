@@ -7,40 +7,63 @@
     android:background="@drawable/background"
     tools:context=".Opciones">
 
-    <ListView
-        android:id="@+id/list_op"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="318dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_rounded_border"
+        android:fontFamily="@font/start"
+        android:gravity="center"
+        android:text="opciones"
+        android:textColor="#EF6136"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/list_op"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list_op"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtN1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+    </ListView>
 
     <TextView
         android:id="@+id/txtN1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/start"
+        android:gravity="center"
         android:text="Jugador 1"
-        android:translationX="50px"
-        android:translationY="700px"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="267dp"
-        app:fontFamily="@font/start">
-
-    </TextView>
+        android:textColor="#EF6136"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtN2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_op" />
 
     <TextView
         android:id="@+id/txtN2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="235dp"
+        android:fontFamily="@font/start"
+        android:gravity="center"
         android:text="Jugador 2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:translationX="50px"
-        android:translationY="800px"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="305dp"
-        app:fontFamily="@font/start">
-
-    </TextView>
+        android:textColor="#EF6136"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtN1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
