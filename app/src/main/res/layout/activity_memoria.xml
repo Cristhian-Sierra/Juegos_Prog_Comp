@@ -131,31 +131,31 @@
         android:id="@+id/textViewLoser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/start"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:layout_marginTop="25dp"
-        android:fontFamily="@font/start"/>
+        android:textSize="30dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonRestart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_weight="1"
             android:background="@drawable/button_rounded_border_game"
             android:fontFamily="@font/vt"
             android:gravity="center"
             android:text="Reiniciar"
             android:textColor="#000000"
-            android:textSize="30dp"
-            android:layout_marginLeft="25dp" />
+            android:textSize="30dp" />
 
         <Space
             android:layout_width="wrap_content"
@@ -166,14 +166,14 @@
             android:id="@+id/buttonMenu2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:background="@drawable/button_rounded_border_game"
             android:fontFamily="@font/vt"
             android:gravity="center"
             android:text="Menú"
             android:textColor="#000000"
-            android:textSize="30dp"
-            android:layout_marginRight="25dp"/>
+            android:textSize="30dp" />
 
     </LinearLayout>
 

@@ -1,10 +1,12 @@
 package com.example.juegos;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -26,6 +28,7 @@ import java.util.TimerTask;
 
 public class Memoria extends AppCompatActivity {
     private String player1, player2;
+    String buttonText;
     private Button buttonRestart;
     private Button buttonMenu2;
     private TextView textViewScoreName1;
@@ -34,6 +37,7 @@ public class Memoria extends AppCompatActivity {
     private TextView textViewScore2;
     private TextView textViewTurno;
     private TextView textViewLoser;
+    private Button tiles[][] = new Button[3][3];;
     private GridLayout tableroCont;
     private long mLastClickTime = 0;
     private int turno;
@@ -56,8 +60,6 @@ public class Memoria extends AppCompatActivity {
         this.buttonRestart = findViewById(R.id.buttonRestart);
         this.buttonMenu2 = findViewById(R.id.buttonMenu2);
         this.turno = 1;
-        this.puntaje1 = 0;
-        this.puntaje2 = 0;
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -65,7 +67,7 @@ public class Memoria extends AppCompatActivity {
         int height = size.y;
 
         tableroCont = findViewById(R.id.tableroCont);
-        final Button tiles[][] = new Button[3][3];
+
         this.letras = new ArrayList<Character>();
 
         Bundle bundle = getIntent().getExtras();
@@ -75,8 +77,8 @@ public class Memoria extends AppCompatActivity {
             player2 = bundle.getString("name2");
             textViewScoreName2.setText(player2);
         }
-        textViewScore1.setText(""+puntaje1);
-        textViewScore2.setText(""+puntaje2);
+        textViewScore1.setText("" + puntaje1);
+        textViewScore2.setText("" + puntaje2);
         int letra = 65;
         textViewTurno.setText((turno % 2 != 0 ? player1 : player2));
         this.remain = false;
@@ -118,7 +120,7 @@ public class Memoria extends AppCompatActivity {
                         }
                         mLastClickTime = SystemClock.elapsedRealtime();
                         Button b = (Button) v;
-                        String buttonText = b.getText().toString();
+                        buttonText = b.getText().toString();
 
                         if (letras.isEmpty()) {
                             letras.add(buttonText.charAt(0));
@@ -134,12 +136,26 @@ public class Memoria extends AppCompatActivity {
                                         tiles[a][a2].setEnabled(false);
                                     }
                                 }
-                                textViewLoser.setText("Perdió \n" + (turno % 2 != 0 ? player1 : player2));
-                                if(turno % 2 != 0 ){
-                                    puntaje1++;
-                                }else{
+                                AlertDialog.Builder alerta= new AlertDialog.Builder(Memoria.this);//Mensaje en cuadro de texto en alerta
+                                alerta.setMessage("Gano "+ (turno % 2 != 0 ? player2 : player1))
+                                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                                        .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        });
+                                AlertDialog titulo= alerta.create();
+                                titulo.setTitle("Felicidades");
+                                titulo.show();
+
+                                if (turno % 2 != 0) {
                                     puntaje2++;
+                                } else {
+                                    puntaje1++;
                                 }
+                                textViewScore1.setText("" + puntaje1);
+                                textViewScore2.setText("" + puntaje2);
                                 return true;
                             } else {
                                 yield++;
@@ -163,7 +179,6 @@ public class Memoria extends AppCompatActivity {
                 });
             }
         }
-
         buttonMenu2.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -177,5 +192,41 @@ public class Memoria extends AppCompatActivity {
                 return false;
             }
         });
+        buttonRestart.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Intent intent = new Intent(getApplicationContext(), Opciones.class);
+               Reiniciar();
+                return false;
+            }
+        });
+    }
+    public void Reiniciar(){
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        int letra =65;
+    turno =0;
+    letras.clear();
+buttonText=null;
+
+for(int i=0;i<3;i++){
+    for(int j=0;j<3;j++){
+        final int finalI = i;
+        final int finalJ = j;
+        final int finalI1 = i;
+        final int finalJ1 = j;
+        final int finalI2 = i;
+        final int finalJ2 = j;
+        tiles[i][j].setBackgroundResource(R.drawable.button_rounded);
+        tiles[i][j].setEnabled(true);
+
+
+
     }
 }
+
+    }
+    }
