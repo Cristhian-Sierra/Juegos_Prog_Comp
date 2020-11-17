@@ -63,7 +63,7 @@
             android:layout_height="50dp"
             android:fontFamily="@font/start"
             android:gravity="center"
-            android:text="Cristian Sierra"
+            android:text="Cristhian Sierra"
             android:textColor="#EF6136"
             android:textSize="18dp" />
 

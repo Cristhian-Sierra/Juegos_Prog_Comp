@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Creditos" />
-        <activity android:name=".Triqui" />
-        <activity android:name=".Memoria" />
-        <activity android:name=".Opciones" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Creditos"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Triqui"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Memoria"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Opciones"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <meta-data

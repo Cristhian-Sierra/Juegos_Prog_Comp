@@ -51,7 +51,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         if(bundle!=null) {
             nombre1 = bundle.getString("name1");
             //String aux = nombre1;
-            txtN1.setText("Le toca a " + nombre1 + " con X");
+            txtN1.setText("Le toca a " + nombre1 + " con O");
             nombre2 = bundle.getString("name2");
             textViewJu1.setText(nombre1);
             textViewJu2.setText(nombre2);
@@ -97,11 +97,11 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
         String color="";
         if(turno==1){//Jugador 1 con X
             color="#EF6136";
-            ImprimirX_O(x,v,color,nombre1);
+            ImprimirX_O(o,v,color,nombre1);
         }
         else{//Jugador 2 con O
             color="#EF6136";
-            ImprimirX_O(o,v,color,nombre2);
+            ImprimirX_O(x,v,color,nombre2);
         }
 
     }
@@ -157,7 +157,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
 
             btn8.setEnabled(true);
             btn8.setText("");
-            txtN1.setText("Le toca a "+nombre1+" con X");
+            txtN1.setText("Le toca a "+nombre1+" con O");
             String colorI="#000000";
             //Cambio de color de botones en reinicio
             btn0.setBackgroundColor(Color.parseColor(colorI));
@@ -266,14 +266,14 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
 //METODO PARA DETERMINAR AL GANADOR
     public void Ganador(char letra, String nomb){
         String colorG="#123456";
-        if(nomb==nombre1 && letra=='X'){//Condicional para acumular las victorias del jugador 1 con X
-            txtN1.setText("Le toca a " +nombre2 + " con O");
+        if(nomb==nombre1 && letra=='O'){//Condicional para acumular las victorias del jugador 1 con X
+            txtN1.setText("Le toca a " +nombre2 + " con X");
             //Posibilidad de ganar 1
             if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -303,7 +303,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Has ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
 
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
@@ -334,7 +334,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -370,7 +370,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -399,7 +399,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -430,7 +430,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la  letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -461,7 +461,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -491,7 +491,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de e
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -519,14 +519,14 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             txtresul2.setText(acumJ2+"");
             txtresul1.setText(acumJ1+"");
     }
-        else if(nomb==nombre2 && letra=='O'){//Para acumular victorias de O
-            txtN1.setText("Le toca a " +nombre1 + " con X");
+        else if(nomb==nombre2 && letra=='X'){//Para acumular victorias de O
+            txtN1.setText("Le toca a " +nombre1 + " con O");
             //Posibilidad de ganar 1
             if((btn0.getText().toString().equals(letra+""))&& (btn1.getText().toString().equals(letra+"") &&(btn2.getText().toString().equals(letra+""))))
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -556,7 +556,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Has ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
 
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
@@ -587,7 +587,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Salir de app", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -623,7 +623,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -652,7 +652,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -683,7 +683,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la  letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -715,7 +715,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de el
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -745,7 +745,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
             {
                 AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
                 alerta.setMessage("Ha ganado la letra "+letra)
-                        .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                        .setCancelable(true)//Paara salir del aleert pulsando fuera de e
                         .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -780,7 +780,7 @@ public class Triqui extends AppCompatActivity implements View.OnClickListener {
 
             AlertDialog.Builder alerta= new AlertDialog.Builder(Triqui.this);//Mensaje en cuadro de texto en alerta
             alerta.setMessage("Para tener una revacha presiona reiniciar")
-                    .setCancelable(false)//Paara salir del aleert pulsando fuera de e
+                    .setCancelable(true)//Paara salir del aleert pulsando fuera de el
                     .setPositiveButton("Vale", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
