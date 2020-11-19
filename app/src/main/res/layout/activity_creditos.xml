@@ -77,7 +77,7 @@
             android:layout_height="50dp"
             android:fontFamily="@font/start"
             android:gravity="center"
-            android:text="David Esperanza :v"
+            android:text="David Esparza"
             android:textColor="#EF6136"
             android:textSize="18dp" />
 
